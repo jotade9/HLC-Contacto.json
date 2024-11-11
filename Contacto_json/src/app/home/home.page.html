@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Listado de Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-input [(ngModel)]="filtro" placeholder="Introduce los datos del filtro"></ion-input>
+  <ion-grid>
+    <ion-row>
+
+
+      <ng-container *ngFor="let item of items | async">
+        <ion-col *ngIf="filtro === '' || item.name.toLowerCase().includes(filtro.toLowerCase())" size-xl="2" size-lg="2"
+          size-md="4" size-sm="6" size-xs="12">
+          <ion-card>
+            <ion-card-content>
+              <ion-card-title>{{ item.name }} </ion-card-title>
+              <b>{{ item.age }}</b>
+              <p>{{ item.location }}<br /></p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+  </ion-grid>
+</ion-content>

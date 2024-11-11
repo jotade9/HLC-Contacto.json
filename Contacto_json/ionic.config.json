@@ -1,0 +1,7 @@
+{
+  "name": "Contacto_json",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
